@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Patch Osodo Okomo — IT Support & Systems Analyst in Nairobi, Kenya. Specialising in T24 core banking, DB2 on AIX, LDAP/LDAPS, Commvault, and production infrastructure.">
+<meta name="theme-color" content="#090d12">
+<meta property="og:title" content="Patch Osodo Okomo — Systems & Infrastructure">
+<meta property="og:description" content="IT Support & Systems Analyst. T24 · DB2 · AIX · LDAP · Commvault. Nairobi, Kenya.">
+<meta property="og:type" content="website">
+<title>Patch Osodo Okomo — Systems & Infrastructure</title>
+
+<!--
+  FONT STRATEGY
+  ─────────────
+  Phase 1 (current): Google Fonts CDN — works immediately, no setup needed.
+  Phase 2 (self-host): Download woff2 files per assets/fonts/fonts.css,
+    replace the two Google <link> tags below with:
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    and add preload hints for the two critical faces:    
+-->
+<link rel="preload" href="assets/fonts/syne-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<!-- DNS resolved before any font request fires -->
+<!-- Only 4 weights — down from 8. Non-blocking via media=print swap trick -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@700;800&family=IBM+Plex+Sans:wght@300;400&display=swap"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@700;800&family=IBM+Plex+Sans:wght@300;400&display=swap">
+</noscript>
+
+<!--
+  CSS: preload as highest-priority resource, then consume as stylesheet.
+  rel=preload tells the browser to fetch this in parallel with HTML parsing
+  — it arrives before the render tree needs it, eliminating render-blocking.
+-->
+<link rel="preload" href="assets/css/style.min.css" as="style">
+<link rel="stylesheet" href="assets/css/style.min.css">
+
+<!--
+  JS: defer moves execution to after HTML is parsed (non-blocking).
+  The script is also fetched in parallel with parsing.
+  Result: zero render-blocking JS.
+-->
+<script src="assets/js/main.min.js" defer></script>
+
+</head>
+<body>
+
+<!-- Custom cursor (desktop only — JS activates on pointer:fine) -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo">PATCH</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-left">
+    <div class="hero-tag">Systems &amp; Infrastructure Specialist</div>
+    <h1 class="hero-name">Patch<br>Osodo<br><span>Okomo</span></h1>
+    <p class="hero-title">Keeping mission-critical systems alive.</p>
+    <p class="hero-desc">IT Support &amp; Systems Analyst at Sidian Bank, Nairobi. Specialising in enterprise banking infrastructure, DB2 on AIX, T24 core banking operations, and production incident management. 500+ users. 99% uptime. Zero compromises.</p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn-primary">View Experience →</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="terminal" role="img" aria-label="Terminal showing profile information">
+      <div class="terminal-bar" aria-hidden="true">
+        <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+        <span class="terminal-title">patch@sidian-bank:~</span>
+      </div>
+      <div class="terminal-body" aria-hidden="true">
+        <div class="t-line"><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+        <div class="t-line"><span class="val">Patch Osodo Okomo</span></div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line"><span class="prompt">$</span> <span class="cmd">cat profile.json</span></div>
+        <div class="t-line"><span class="val">{</span></div>
+        <div class="t-line">&nbsp;&nbsp;<span class="ok">"role":</span> <span class="val">"IT Support &amp; Systems Analyst"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;<span class="ok">"org":</span> <span class="val">"Sidian Bank"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;<span class="ok">"users_supported":</span> <span class="val">500</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;<span class="ok">"uptime_sla":</span> <span class="val">"99%"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;<span class="ok">"first_contact_res":</span> <span class="val">"90%"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;<span class="ok">"stack":</span> <span class="val">["T24","DB2","AIX","LDAP"]</span></div>
+        <div class="t-line"><span class="val">}</span></div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line"><span class="prompt">$</span> <span class="cmd">systemctl status career</span></div>
+        <div class="t-line"><span class="ok">● career.service — ACTIVE (running)</span></div>
+        <div class="t-line">&nbsp;&nbsp;Seeking: Fintech Systems Operations</div>
+        <div class="t-line"><span class="prompt">$</span> <span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar" role="region" aria-label="Key metrics">
+  <div class="stat-item reveal"><div class="stat-number">2+</div><div class="stat-label">Years in Production</div></div>
+  <div class="stat-item reveal"><div class="stat-number">500+</div><div class="stat-label">Users Supported</div></div>
+  <div class="stat-item reveal"><div class="stat-number">99%</div><div class="stat-label">System Uptime</div></div>
+  <div class="stat-item reveal"><div class="stat-number">90%</div><div class="stat-label">First-Contact Resolution</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" aria-label="About">
+  <div class="section-tag">About</div>
+  <h2 class="section-title">Enterprise IT.<br>Production mindset.</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a <strong>Systems Analyst and IT Support professional</strong> based in <span class="highlight">Nairobi, Kenya</span>, with over two years of hands-on experience keeping enterprise banking infrastructure running at Sidian Bank.</p>
+      <p>My environment is genuinely enterprise-grade — <strong>T24 core banking (R18 → R24/TAFJ)</strong> hosted on <strong>IBM AIX</strong>, backed by <strong>DB2</strong>, with shift-based operations, daily SSH access, and production incident management as core workflow.</p>
+      <p>I've served as <strong>Infrastructure Officer</strong> during a major T24 system upgrade — supporting testing, COB operations, and go-live phases across 500+ users with zero data loss. I manage DB2 backups and restoration both natively and through <strong>Commvault</strong>, and administer <strong>LDAP/LDAPS</strong> for directory services.</p>
+      <p>Outside of core infrastructure work, I build automation tooling — batch scripts, SFTP upload pipelines, web-based operations utilities — and I'm actively developing toward a <span class="highlight">senior Fintech Systems Operations</span> role.</p>
+    </div>
+    <div class="about-stack reveal">
+      <div class="stack-group">
+        <div class="stack-group-label">Core Banking</div>
+        <div class="stack-tags"><span class="tag amber">T24 / TAFJ</span><span class="tag amber">R18 → R24 Upgrade</span><span class="tag">CASA</span><span class="tag">Loans</span><span class="tag">EOD / EOM</span><span class="tag">Payments</span></div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Infrastructure</div>
+        <div class="stack-tags"><span class="tag amber">IBM AIX</span><span class="tag amber">DB2</span><span class="tag">Commvault</span><span class="tag">LDAP / LDAPS</span><span class="tag">Windows Server</span><span class="tag">Active Directory</span></div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Operations &amp; Tools</div>
+        <div class="stack-tags"><span class="tag">WinSCP / SFTP</span><span class="tag">SSH</span><span class="tag">PowerShell</span><span class="tag">Batch Scripting</span><span class="tag">ITIL v4</span><span class="tag">TCP/IP · DNS</span></div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Education</div>
+        <div class="stack-tags"><span class="tag">BSc Maths &amp; CS — MMU Kenya</span><span class="tag">ITIL v4 Foundation</span><span class="tag">Networking Fundamentals</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-label="Experience">
+  <div class="section-tag">Experience</div>
+  <h2 class="section-title">Where I've<br>done the work.</h2>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-period">May 2023 — Present</div>
+      <div class="timeline-role">IT Support &amp; Systems Analyst</div>
+      <div class="timeline-company">Sidian Bank · Nairobi, Kenya</div>
+      <ul class="timeline-points">
+        <li>Support 500+ users across multiple branches on T24 core banking hosted on IBM AIX with DB2 — 99% uptime, 90% first-contact resolution</li>
+        <li>Daily SSH access to AIX environment for T24 application support, log analysis, process monitoring, and production troubleshooting</li>
+        <li>DB2 backup and restoration using Commvault and native DB2 inbuilt functions — including rollforward recovery and log-based restoration</li>
+        <li>LDAP/LDAPS administration including migration of PHP/Yii2 banking application from LDAP to LDAPS with certificate management</li>
+        <li>Infrastructure Officer during T24 upgrade from R18 (TAFC) to R24 (TAFJ) — COB operations, test phases, and go-live with zero data loss</li>
+        <li>Commvault production troubleshooting: SSL/TLS certificate failures, TCP retransmissions, DB2 SBT library errors (SQL2062N), and storage exhaustion</li>
+        <li>Administered Active Directory, Windows Server, DNS, DHCP, and Group Policy across branch infrastructure</li>
+        <li>Developed SOPs, troubleshooting guides, and knowledge base articles that reduced average incident resolution time</li>
+      </ul>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-period">February 2022 — April 2023</div>
+      <div class="timeline-role">KYC Data Clean-Up Clerk</div>
+      <div class="timeline-company">Sidian Bank · Nairobi, Kenya</div>
+      <ul class="timeline-points">
+        <li>Managed digitisation and indexing of customer documentation in the EDRMS system</li>
+        <li>Ensured data accuracy, quality, and regulatory compliance across customer records</li>
+        <li>Maintained detailed audit trails and collaborated with branch operations teams</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" aria-label="Skills">
+  <div class="section-tag">Capabilities</div>
+  <h2 class="section-title">What I bring<br>to the table.</h2>
+  <div class="skills-grid">
+    <div class="skill-card reveal"><div class="skill-icon" aria-hidden="true">🏦</div><div class="skill-name">Core Banking Operations</div><div class="skill-desc">Deep hands-on experience with T24/TAFJ on AIX. EOD/EOM processing, CASA, loans, payments, and upgrade support across R18 and R24.</div><div class="skill-items"><span class="skill-item">T24 TAFJ</span><span class="skill-item">AIX</span><span class="skill-item">EOD/EOM</span><span class="skill-item">Go-Live</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon" aria-hidden="true">🗄️</div><div class="skill-name">DB2 &amp; Backup Operations</div><div class="skill-desc">Daily DB2 health checks, performance monitoring, DBA escalation, and full backup/restore — both via Commvault and native DB2 functions.</div><div class="skill-items"><span class="skill-item">DB2</span><span class="skill-item">Commvault</span><span class="skill-item">Rollforward</span><span class="skill-item">Log Recovery</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon" aria-hidden="true">🔐</div><div class="skill-name">Directory &amp; Identity</div><div class="skill-desc">LDAP/LDAPS administration, Active Directory management, Group Policy, and user provisioning across enterprise banking environments.</div><div class="skill-items"><span class="skill-item">LDAP/LDAPS</span><span class="skill-item">Active Directory</span><span class="skill-item">Group Policy</span><span class="skill-item">PKI/Certs</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon" aria-hidden="true">🖥️</div><div class="skill-name">Unix &amp; Windows Server</div><div class="skill-desc">Daily SSH access into IBM AIX for production support. Windows Server administration including DNS, DHCP, patching, and monitoring.</div><div class="skill-items"><span class="skill-item">IBM AIX</span><span class="skill-item">SSH / ksh</span><span class="skill-item">Windows Server</span><span class="skill-item">DNS / DHCP</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon" aria-hidden="true">⚡</div><div class="skill-name">Incident Management</div><div class="skill-desc">Production incident triage, root-cause analysis, and SLA management under pressure. ITIL v4 certified. 90% first-contact resolution across 500+ users.</div><div class="skill-items"><span class="skill-item">ITIL v4</span><span class="skill-item">Root-Cause Analysis</span><span class="skill-item">SLA Management</span><span class="skill-item">Escalation</span></div></div>
+    <div class="skill-card reveal"><div class="skill-icon" aria-hidden="true">🔧</div><div class="skill-name">Automation &amp; Scripting</div><div class="skill-desc">Batch script automation for SFTP pipelines, log management, and scheduled operations. PowerShell for Windows administration and email alerting.</div><div class="skill-items"><span class="skill-item">Batch / CMD</span><span class="skill-item">PowerShell</span><span class="skill-item">WinSCP</span><span class="skill-item">SFTP Pipelines</span></div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-label="Projects">
+  <div class="section-tag">Projects</div>
+  <h2 class="section-title">Built in<br>production. Not theory.</h2>
+  <div class="projects-grid">
+    <div class="project-card reveal"><div class="project-num">01 /</div><div class="project-arrow" aria-hidden="true">↗</div><div class="project-name">SFTP Files Upload Pipeline</div><div class="project-desc">Automated batch script system for scheduled file uploads to a remote SFTP endpoint. 3-cycle execution, duplicate prevention via local upload tracker, daily dated logs, and 30-day cleanup via forfiles.</div><div class="project-tags"><span class="project-tag">Batch Script</span><span class="project-tag">WinSCP</span><span class="project-tag">SFTP</span><span class="project-tag">PowerShell</span><span class="project-tag">Log Management</span></div></div>
+    <div class="project-card reveal"><div class="project-num">02 /</div><div class="project-arrow" aria-hidden="true">↗</div><div class="project-name">COB Time Converter</div><div class="project-desc">Browser-based operations utility converting raw COB stage timestamps into HHMMhrs military format with verbose duration calculations. Computes overall window from first start to last end — eliminating cumulative truncation drift.</div><div class="project-tags"><span class="project-tag">HTML / JS</span><span class="project-tag">Operations Tool</span><span class="project-tag">Banking Ops</span></div></div>
+    <div class="project-card reveal"><div class="project-num">03 /</div><div class="project-arrow" aria-hidden="true">↗</div><div class="project-name">T24 R18 → R24 Upgrade</div><div class="project-desc">Infrastructure Officer role during Sidian Bank's T24 core banking upgrade from TAFC (R18) to TAFJ (R24). System backups, COB operations, test environment support, and go-live coordination across 500+ users with zero data loss.</div><div class="project-tags"><span class="project-tag">T24 / TAFJ</span><span class="project-tag">AIX</span><span class="project-tag">DB2</span><span class="project-tag">Change Management</span><span class="project-tag">Go-Live</span></div></div>
+    <div class="project-card reveal"><div class="project-num">04 /</div><div class="project-arrow" aria-hidden="true">↗</div><div class="project-name">LDAP → LDAPS Migration</div><div class="project-desc">End-to-end migration of a PHP/Yii2 banking application's directory authentication from LDAP to LDAPS. Certificate management, application configuration changes, and validation in a production banking environment.</div><div class="project-tags"><span class="project-tag">LDAP / LDAPS</span><span class="project-tag">PHP / Yii2</span><span class="project-tag">PKI</span><span class="project-tag">Security</span></div></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" aria-label="Certifications">
+  <div class="section-tag">Credentials</div>
+  <h2 class="section-title">Certified &amp;<br>qualified.</h2>
+  <div class="certs-grid">
+    <div class="cert-card reveal"><div class="cert-badge" aria-hidden="true">🎓</div><div class="cert-name">BSc Mathematics &amp; Computer Science</div><div class="cert-issuer">Multimedia University of Kenya · Dec 2020</div></div>
+    <div class="cert-card reveal"><div class="cert-badge" aria-hidden="true">📋</div><div class="cert-name">ITIL v4 Foundation</div><div class="cert-issuer">IT Service Management · Axelos</div></div>
+    <div class="cert-card reveal"><div class="cert-badge" aria-hidden="true">🌐</div><div class="cert-name">Networking Fundamentals</div><div class="cert-issuer">Network Protocols &amp; Administration</div></div>
+    <div class="cert-card reveal"><div class="cert-badge" aria-hidden="true">📱</div><div class="cert-name">Mobile Software Development</div><div class="cert-issuer">eMobilis Mobile Technology Institute · 2016</div></div>
+    <div class="cert-card reveal"><div class="cert-badge" aria-hidden="true">🏦</div><div class="cert-name">T24 Core Banking Operations</div><div class="cert-issuer">Practical · Sidian Bank Production Environment</div></div>
+    <div class="cert-card reveal"><div class="cert-badge" aria-hidden="true">🔒</div><div class="cert-name">DB2 Backup &amp; Recovery</div><div class="cert-issuer">Practical · Commvault + Native DB2 Functions</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-label="Contact">
+  <div class="contact-inner">
+    <div class="section-tag" style="justify-content:center;">Contact</div>
+    <h2 class="section-title" style="margin-bottom:18px;">Let's connect.</h2>
+    <p class="contact-sub">Based in Nairobi, Kenya. Open to Fintech and Systems Operations roles, infrastructure consulting, and technical collaboration.</p>
+    <div class="contact-links">
+      <a href="mailto:okomopatchosodo@gmail.com" class="contact-link">✉ okomopatchosodo@gmail.com</a>
+      <a href="tel:+254797454950" class="contact-link">📞 +254 797 454 950</a>
+      <a href="https://linkedin.com/in/osodopatch" target="_blank" rel="noopener noreferrer" class="contact-link">in LinkedIn</a>
+      <a href="https://github.com/PatchOsodo" target="_blank" rel="noopener noreferrer" class="contact-link">⌥ GitHub</a>
+    </div>
+    <div class="footer-line">© 2026 Patch Osodo Okomo · Nairobi, Kenya · Built with precision.</div>
+  </div>
+</section>
+
+</body>
+</html>
