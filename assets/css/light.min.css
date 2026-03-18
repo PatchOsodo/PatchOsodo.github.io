@@ -1,0 +1,140 @@
+/*
+ * light.min.css — Light mode overrides for patch portfolio
+ * Loaded dynamically via JS on top of style.min.css
+ * Only contains values that differ from the dark default
+ */
+
+/* ── Core color overrides ── */
+:root{
+  --bg:#f4f7f9;
+  --bg2:#e9eef2;
+  --bg3:#dde4ea;
+  --border:rgba(0,0,0,0.08);
+  --text:#0f1923;
+  --muted:#5a6a7a;
+  --sub:#4a5a6a;
+  --green:#16a34a;
+  --green-dim:rgba(22,163,74,.1);
+  --green-mid:rgba(22,163,74,.3);
+  --teal:#0891b2;
+}
+
+/* ── Body & scrollbar ── */
+body{background:var(--bg);color:var(--text);}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--green);}
+
+/* ── Noise overlay — reduce opacity in light mode ── */
+body::after{opacity:.008;}
+
+/* ── Nav ── */
+nav{background:rgba(244,247,249,.95);}
+nav.scrolled{border-bottom-color:var(--border);}
+.nav-logo{color:var(--green);}
+.nav-links a{color:var(--muted);}
+.nav-links a:hover{color:var(--green);}
+.nav-toggle span{background:var(--muted);}
+
+/* Mobile nav dropdown */
+.nav-links{background:rgba(244,247,249,.98);}
+
+/* ── Hero ── */
+.hero-grid-bg{
+  background-image:
+    linear-gradient(var(--green-dim) 1px,transparent 1px),
+    linear-gradient(90deg,var(--green-dim) 1px,transparent 1px);
+}
+.hero-glow{background:radial-gradient(circle,var(--green-dim) 0%,transparent 70%);}
+.hero-tag{color:var(--green);}
+.hero-tag::before{background:var(--green);}
+.hero-name span{color:var(--green);}
+.hero-title{color:var(--muted);}
+.hero-desc{color:var(--sub);}
+
+/* ── Buttons ── */
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:#15803d;}
+.btn-secondary{border-color:var(--border);color:var(--muted);}
+.btn-secondary:hover{border-color:var(--green);color:var(--green);}
+
+/* ── Terminal ── */
+.terminal{background:var(--bg2);border-color:var(--border);box-shadow:0 16px 48px rgba(0,0,0,.12);}
+.terminal-bar{background:var(--bg3);border-bottom-color:var(--border);}
+.terminal-title{color:var(--muted);}
+.t-line{color:var(--muted);}
+.t-line .cmd{color:var(--text);}
+.t-line .val{color:var(--green);}
+.t-line .ok{color:var(--teal);}
+.t-line .prompt{color:var(--teal);}
+.t-cursor{background:var(--green);}
+
+/* ── Stats bar ── */
+.stats-bar{border-top-color:var(--border);border-bottom-color:var(--border);}
+.stat-item{border-right-color:var(--border);}
+.stat-number{color:var(--green);}
+.stat-label{color:var(--muted);}
+
+/* ── Section tags & titles ── */
+.section-tag{color:var(--green);}
+.section-tag::after{background:var(--green-mid);}
+
+/* ── About ── */
+#about{background:var(--bg2);}
+.about-text p{color:var(--sub);}
+.about-text p strong{color:var(--text);}
+.about-text .highlight{color:var(--green);}
+.stack-group-label{color:var(--muted);border-bottom-color:var(--border);}
+.tag{background:var(--bg3);border-color:var(--border);color:var(--muted);}
+.tag:hover{border-color:var(--green);color:var(--green);background:var(--green-dim);}
+.tag.green{border-color:var(--green-mid);color:var(--green);background:var(--green-dim);}
+
+/* ── Experience timeline ── */
+.timeline::before{background:linear-gradient(to bottom,var(--green),transparent);}
+.timeline-item::before{background:var(--green);box-shadow:0 0 10px var(--green-mid);}
+.timeline-period{color:var(--green);}
+.timeline-role{color:var(--text);}
+.timeline-company{color:var(--muted);}
+.timeline-points li{color:var(--sub);border-bottom-color:var(--border);}
+.timeline-points li::before{color:var(--green);}
+
+/* ── Skills ── */
+#skills{background:var(--bg2);}
+.skill-card{background:var(--bg3);border-color:var(--border);}
+.skill-card::before{background:var(--green);}
+.skill-card:hover{background:var(--bg2);border-color:var(--green-mid);}
+.skill-name{color:var(--text);}
+.skill-desc{color:var(--muted);}
+.skill-item{background:var(--green-dim);color:var(--green);border-color:var(--green-mid);}
+
+/* ── Projects ── */
+.project-card{background:var(--bg2);border-color:var(--border);}
+.project-card:hover{border-color:var(--green-mid);}
+.project-card:hover .project-arrow{color:var(--green);}
+.project-name{color:var(--text);}
+.project-desc{color:var(--muted);}
+.project-tag{background:var(--bg3);border-color:var(--border);color:var(--muted);}
+.project-arrow{color:var(--muted);}
+
+/* ── Certifications ── */
+#certifications{background:var(--bg2);}
+.cert-card{background:var(--bg3);border-color:var(--border);}
+.cert-card:hover{border-color:var(--green-mid);}
+.cert-badge{background:var(--green-dim);border-color:var(--green-mid);}
+.cert-name{color:var(--text);}
+.cert-issuer{color:var(--muted);}
+
+/* ── Contact ── */
+#contact{background:var(--bg);}
+.contact-sub{color:var(--muted);}
+.contact-link{color:var(--muted);border-color:var(--border);}
+.contact-link:hover{border-color:var(--green);color:var(--green);}
+.footer-line{color:var(--border);border-top-color:var(--border);}
+
+/* ── Theme toggle button ── */
+.theme-toggle{border-color:var(--border);color:var(--muted);}
+.theme-toggle:hover{border-color:var(--green);color:var(--green);}
+
+/* ── Cursor ring ── */
+.cursor-ring{border-color:var(--green-mid);}
+.cursor-ring.hovering{border-color:var(--green);}
+.cursor{background:var(--green);}
