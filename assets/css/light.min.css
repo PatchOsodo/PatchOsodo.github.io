@@ -134,7 +134,12 @@ nav.scrolled{border-bottom-color:var(--border);}
 .theme-toggle{border-color:var(--border);color:var(--muted);}
 .theme-toggle:hover{border-color:var(--green);color:var(--green);}
 
-/* ── Cursor ring ── */
+/* ── Nav logo — inline SVG theme overrides ── */
+/* In light mode the green shifts to #16a34a (--green) automatically    */
+/* because all logo classes reference var(--green). Text classes shift  */
+/* to --text and --muted. No JS swap needed.                            */
+.nav-logo-svg .logo-name     { fill: var(--text); }
+.nav-logo-svg .logo-location { fill: var(--muted); }
 .cursor-ring{border-color:var(--green-mid);}
 .cursor-ring.hovering{border-color:var(--green);}
 .cursor{background:var(--green);}
